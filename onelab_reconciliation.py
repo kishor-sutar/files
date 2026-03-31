@@ -372,11 +372,14 @@ print(f"Net difference                : ${net_diff:,.2f}")
 # CELL 13 — Export artefacts
 # =============================================================================
 
-exception_report.to_csv("/mnt/user-data/outputs/exception_report_march2026.csv", index=False)
-platform_df.to_csv("/mnt/user-data/outputs/platform_transactions.csv", index=False)
-bank_df.to_csv("/mnt/user-data/outputs/bank_settlements.csv", index=False)
+import os
+OUTPUT_DIR = os.path.dirname(os.path.abspath(__file__))  # same folder as the script
 
-print("\nFiles written:")
+exception_report.to_csv(os.path.join(OUTPUT_DIR, "exception_report_march2026.csv"), index=False)
+platform_df.to_csv(os.path.join(OUTPUT_DIR, "platform_transactions.csv"), index=False)
+bank_df.to_csv(os.path.join(OUTPUT_DIR, "bank_settlements.csv"), index=False)
+
+print(f"\nFiles written to: {OUTPUT_DIR}")
 print("  exception_report_march2026.csv")
 print("  platform_transactions.csv")
 print("  bank_settlements.csv")
