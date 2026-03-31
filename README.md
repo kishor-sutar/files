@@ -9,7 +9,7 @@
 ## 📁 Project Structure
 
 ```
-files/
+onelab_AI_Test>/
 │
 ├── onelab_reconciliation.py        # Main reconciliation script (14 cells)
 ├── exception_report_march2026.csv  # Output: all flagged exceptions
